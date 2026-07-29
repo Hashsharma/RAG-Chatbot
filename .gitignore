@@ -1,0 +1,5 @@
+zvenv_ragchatbot
+.env
+__pycache__/
+*.pyc
+storage/*
