@@ -3,3 +3,4 @@ zvenv_ragchatbot
 __pycache__/
 *.pyc
 storage/*
+data/*
