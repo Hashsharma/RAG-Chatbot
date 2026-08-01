@@ -68,7 +68,6 @@ async def query():
                     "metadata": query_results['metadatas'][0][i] if query_results['metadatas'] else {}
                 })
         
-        # 4. Simple answer (just return top result or concatenated)
         if sources:
             # You can customize this: return top result, or combine all
             answer = sources[0]['text']  # Simple: just return the most relevant
@@ -85,8 +84,6 @@ async def query():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# services/rag_service.py
 
 @router.get("/hybrid-query")
 async def hybrid_query():
@@ -119,7 +116,6 @@ async def hybrid_query():
                 mode = "BM25+Vector"
             except Exception as e:
                 print(f"⚠️ BM25 failed, falling back to vector only: {e}")
-                # Fallback to vector only
                 results = await loop.run_in_executor(
                     None,
                     lambda: vector_retriever.retrieve(query_text)
@@ -149,8 +145,6 @@ async def hybrid_query():
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
 
 @router.post("/hybrid-query")
 async def hybrid_query(request: QueryRequest):
