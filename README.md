@@ -254,7 +254,7 @@ Example:
 
 ```json
 {
-    "question": "Explain the document"
+    "question": "Explain the document and tell me where beyonce live"
 }
 ```
 

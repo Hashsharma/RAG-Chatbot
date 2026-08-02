@@ -4,8 +4,6 @@ from app.core.config import get_settings
 from app.core.model_loader import load_model
 from app.services.rag_service import router as rag_router
 from app.core.vector_store import load_vector_store
-# from app.core.bm25_retriever import load_bm25_retriever
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
