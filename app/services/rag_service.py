@@ -221,7 +221,12 @@ async def hybrid_query(request: QueryRequest):
             status_code=500,
             detail=str(e)
         )
-    
+
+
+@router.get("/query-user")
+async def get_user():
+    return {"user": "0001"}
+
 @router.get("/stats")
 async def get_stats():
     """Get collection statistics"""
